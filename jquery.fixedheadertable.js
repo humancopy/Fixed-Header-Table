@@ -567,15 +567,15 @@
 
         tableProp.border = ($obj.find('th:first-child').outerWidth() - $obj.find('th:first-child').innerWidth()) / borderCollapse;
 
-        $obj.find('thead tr:first-child > *').each(function(index) {
+        $obj.find('thead tr:first-child > *:not([colspan])').each(function(index) {
           tableProp.thead[index] = $(this).width() + tableProp.border;
         });
 
-        $obj.find('tfoot tr:first-child > *').each(function(index) {
+        $obj.find('tfoot tr:first-child > *:not([colspan])').each(function(index) {
           tableProp.tfoot[index] = $(this).width() + tableProp.border;
         });
 
-        $obj.find('tbody tr:first-child > *').each(function(index) {
+        $obj.find('tbody tr:first-child > *:not([colspan])').each(function(index) {
           tableProp.tbody[index] = $(this).width() + tableProp.border;
         });
 
